@@ -11,8 +11,10 @@ Usage
 
 The Matlab function extractNeuralNetwork takes as input a trained time-delay neural network and outputs the header files Data.h and ANNClassifier.h and the source file ANNClassifier.cpp. For a detailed usage example see the files example.m and example.cpp.
 
+For any comments or questions, please email david.hasenfratz@gmail.com
+
 License
-------------
+-------
 
 /*
 The MIT License (MIT)
