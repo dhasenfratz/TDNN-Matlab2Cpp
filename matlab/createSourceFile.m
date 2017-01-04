@@ -96,7 +96,7 @@ function createSourceFile(net)
   fprintf(fid,'        }\n');
   fprintf(fid,'      }\n');
   fprintf(fid,'      sum += B1[n];\n');
-  fprintf(fid,'      sum = 2 / (1 + exp(-2*sum)) - 1;\n\n');
+  fprintf(fid,'      sum = 2 / (1 + expf(-2*sum)) - 1;\n\n');
   fprintf(fid,'      for (int i = 0; i < %d; i++) {\n', numel(net.b{2}));
   fprintf(fid,'        prediction[i] += sum * LW2_1[i][n];\n');
   fprintf(fid,'      }\n');
