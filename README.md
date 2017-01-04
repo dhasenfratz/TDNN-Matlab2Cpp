@@ -1,7 +1,7 @@
 README
 ==
 
-This program takes a time-delay neural network (TDNN) trained in Matlab using *timedelaynet* of Matlab's Neural Network Toolbox and creates the header and source files of the new C++ class *ANNClassifier* implementing the trained time-delay neural network.
+This program takes a time-delay neural network (TDNN) trained in Matlab using *timedelaynet* of Matlab's Neural Network Toolbox and creates the header and source files of the new C++ class *TDNNClassifier* implementing the trained time-delay neural network.
 
 This is useful for deploying code developed in Matlab into embedded
 applications where Matlab is not available.
@@ -9,7 +9,7 @@ applications where Matlab is not available.
 Usage
 --
 
-The Matlab function *extractNeuralNetwork* takes as input a trained time-delay neural network and outputs the header files *Data.h* and *ANNClassifier.h* and the source file *ANNClassifier.cpp*. For a detailed usage example see the files *example.m* and *example.cpp*.
+The Matlab function *extractNeuralNetwork* takes as input a trained time-delay neural network and outputs the header files *Data.h* and *TDNNClassifier.h* and the source file *TDNNClassifier.cpp*. For a detailed usage example see the files *example.m* and *example.cpp*.
 
 For any comments or questions, please email david.hasenfratz@gmail.com
 

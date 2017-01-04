@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 #include <iostream>
 #include "Data.h"
-#include "ANNClassifier.h"
+#include "TDNNClassifier.h"
 
 using namespace std;
 
@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
   // Test the classifier with the first five inputs of Matlab's dataset
   // pollution_dataset, which was used to train the neural network.
   Data data;
-  ANNClassifier classifier;
+  TDNNClassifier classifier;
   float *prediction;
 
   for (int d = 0; d < 5; d++) {

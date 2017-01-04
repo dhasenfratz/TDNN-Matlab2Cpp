@@ -22,14 +22,14 @@
 
 function createHeaderFile(net)
 
-  fid=fopen('../cpp/ANNClassifier.h', 'w');
-  fprintf(fid,'#ifndef ANN_CLASSIFIER_H_\n');
-  fprintf(fid,'#define ANN_CLASSIFIER_H_\n\n');
+  fid=fopen('../cpp/TDNNClassifier.h', 'w');
+  fprintf(fid,'#ifndef TDNN_CLASSIFIER_H_\n');
+  fprintf(fid,'#define TDNN_CLASSIFIER_H_\n\n');
   fprintf(fid,'#include "CircularBuffer.h"\n');
   fprintf(fid,'#include "Data.h"\n\n');
-  fprintf(fid,'class ANNClassifier {\n\n');
+  fprintf(fid,'class TDNNClassifier {\n\n');
   fprintf(fid,'public:\n');
-  fprintf(fid,'  ANNClassifier() : _num(0) {}\n');
+  fprintf(fid,'  TDNNClassifier() : _num(0) {}\n');
   fprintf(fid,'  float *Predict(Data data);\n\n');
   fprintf(fid,'private:\n');
   fprintf(fid,'  CircularBuffer<Data, %d> _input;\n', net.numInputDelays);

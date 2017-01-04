@@ -1,13 +1,13 @@
-#ifndef ANN_CLASSIFIER_H_
-#define ANN_CLASSIFIER_H_
+#ifndef TDNN_CLASSIFIER_H_
+#define TDNN_CLASSIFIER_H_
 
 #include "CircularBuffer.h"
 #include "Data.h"
 
-class ANNClassifier {
+class TDNNClassifier {
 
 public:
-  ANNClassifier() : _num(0) {}
+  TDNNClassifier() : _num(0) {}
   float *Predict(Data data);
 
 private:

@@ -22,11 +22,11 @@
 
 function createSourceFile(net)
 
-  fid=fopen('../cpp/ANNClassifier.cpp', 'w');
+  fid=fopen('../cpp/TDNNClassifier.cpp', 'w');
   fprintf(fid,'#include <cmath>\n');
-  fprintf(fid,'#include "ANNClassifier.h"\n\n');
+  fprintf(fid,'#include "TDNNClassifier.h"\n\n');
 
-  fprintf(fid,'const ANNClassifier::XStep ANNClassifier::X1_STEP1 = {\n');
+  fprintf(fid,'const TDNNClassifier::XStep TDNNClassifier::X1_STEP1 = {\n');
   fprintf(fid, '  {');
   fprintf(fid, '%f, ', net.inputs{1}.processSettings{1}.xoffset(1:end-1));
   fprintf(fid, '%f},\n', net.inputs{1}.processSettings{1}.xoffset(end));
@@ -35,7 +35,7 @@ function createSourceFile(net)
   fprintf(fid, '%f},\n', net.inputs{1}.processSettings{1}.gain(end));
   fprintf(fid, '  %f\n};\n\n', net.inputs{1}.processSettings{1}.ymin);
 
-  fprintf(fid,'const ANNClassifier::YStep ANNClassifier::Y1_STEP1 = {\n');
+  fprintf(fid,'const TDNNClassifier::YStep TDNNClassifier::Y1_STEP1 = {\n');
   fprintf(fid, '  {');
   fprintf(fid, '%f, ', net.outputs{2}.processSettings{1}.xoffset(1:end-1));
   fprintf(fid, '%f},\n', net.outputs{2}.processSettings{1}.xoffset(end));
@@ -44,15 +44,15 @@ function createSourceFile(net)
   fprintf(fid, '%f},\n', net.outputs{2}.processSettings{1}.gain(end));
   fprintf(fid, '  %f\n};\n\n', net.outputs{2}.processSettings{1}.ymin);
 
-  fprintf(fid,'const float ANNClassifier::B1[%d] = {', numel(net.b{1}));
+  fprintf(fid,'const float TDNNClassifier::B1[%d] = {', numel(net.b{1}));
   fprintf(fid, '%f, ', net.b{1}(1:end-1));
   fprintf(fid, '%f};\n\n', net.b{1}(end));
 
-  fprintf(fid,'const float ANNClassifier::B2[%d] = {', numel(net.b{2}));
+  fprintf(fid,'const float TDNNClassifier::B2[%d] = {', numel(net.b{2}));
   fprintf(fid, '%f, ', net.b{2}(1:end-1));
   fprintf(fid, '%f};\n\n', net.b{2}(end));
 
-  fprintf(fid,'const float ANNClassifier::IW1_1[%d][%d] = {\n', size(net.IW{1}));
+  fprintf(fid,'const float TDNNClassifier::IW1_1[%d][%d] = {\n', size(net.IW{1}));
   s = size(net.IW{1});
   for i=1:s(1)
     fprintf(fid, '  {');
@@ -64,7 +64,7 @@ function createSourceFile(net)
     end
   end
 
-  fprintf(fid,'const float ANNClassifier::LW2_1[%d][%d] = {\n', size(net.LW{2}));
+  fprintf(fid,'const float TDNNClassifier::LW2_1[%d][%d] = {\n', size(net.LW{2}));
   s = size(net.LW{2});
   for i=1:s(1)
     fprintf(fid, '  {');
@@ -76,7 +76,7 @@ function createSourceFile(net)
     end
   end
 
-  fprintf(fid,'float *ANNClassifier::Predict(Data data) {\n');
+  fprintf(fid,'float *TDNNClassifier::Predict(Data data) {\n');
   fprintf(fid,'  static float prediction[%d];\n', net.outputs{2}.size);
   fprintf(fid,'  float sum = 0.0f;\n\n');
   fprintf(fid,'  for (int i = 0; i < %d; i++) {\n', net.outputs{2}.size);
